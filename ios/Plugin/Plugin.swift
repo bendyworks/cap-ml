@@ -7,11 +7,19 @@ import Capacitor
  */
 @objc(CapML)
 public class CapML: CAPPlugin {
-    
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.success([
-            "value": value
-        ])
+    @objc func detectText(_ call: CAPPluginCall) {
+        guard var filename = call.getString("filename") else {
+            call.reject("file not found")
+            return
+        }
+
+        // removeFirst(7) removes the initial "file://"
+        filename.removeFirst(7)
+        guard let image = UIImage(contentsOfFile: filename) else {
+            call.reject("file does not contain an image")
+            return
+        }
+
+        TextDetector(call: call, image: image).detectText()
     }
 }

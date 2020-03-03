@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Plugins } from '@capacitor/core';
-const { CapML } = Plugins;
+import { Plugins, CameraSource, CameraResultType } from '@capacitor/core';
+const { CapML, Camera } = Plugins;
 
 @Component({
   selector: 'app-home',
@@ -9,10 +9,18 @@ const { CapML } = Plugins;
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
+  private imageFile;
 
   constructor() {}
 
   ngOnInit() {
-    CapML.echo({value: 'hello'}).then((res) => console.log("got: " + res['value']));
+  }
+
+  async detectTextInImage() {
+    this.imageFile = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Photos,
+    })
+    console.log(this.imageFile.webPath)
   }
 }

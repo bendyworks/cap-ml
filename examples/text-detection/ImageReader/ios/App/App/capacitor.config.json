@@ -1,10 +1,13 @@
 {
-  "appId": "io.ionic.starter",
+  "appId": "com.bendyworks.CapML.ImageReader",
   "appName": "ImageReader",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
   "cordova": {},
+  "ios": {
+    "minVersion": "13.0"
+  },
   "server": {
     "url": "http://localhost:8100",
     "cleartext": true
