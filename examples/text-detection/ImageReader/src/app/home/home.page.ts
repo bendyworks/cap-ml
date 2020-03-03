@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Plugins } from '@capacitor/core';
+const { CapML } = Plugins;
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -10,6 +13,6 @@ export class HomePage implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log('hi')
+    CapML.echo({value: 'hello'}).then((res) => console.log("got: " + res['value']));
   }
 }
