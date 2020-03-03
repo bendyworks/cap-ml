@@ -9,9 +9,9 @@ import Foundation
 import Vision
 import Capacitor
 
-@available(iOS 11.3, *)
+@available(iOS 13.0, *)
 public class TextDetector {
-    var detectedText: [String] = []
+    var detectedText: [[String: Any]] = []
     let call: CAPPluginCall
     let image: UIImage
 
@@ -27,7 +27,7 @@ public class TextDetector {
             return
         }
 
-        let imageRequestHandler = VNImageRequestHandler(cgImage: cgImage, orientation: CGImagePropertyOrientation.up, options: [:])
+        let imageRequestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
 
         DispatchQueue.global(qos: .userInitiated).async {
             do {
@@ -55,73 +55,16 @@ public class TextDetector {
                 self.call.reject("error")
                 return
             }
-            for result in results {
-                // get boundaries of text location
-                let blx = Double(result.bottomLeft.x).truncate(places: 2)
-                let bly = Double(result.bottomLeft.y).truncate(places: 2)
-                let brx = Double(result.bottomRight.x).truncate(places: 2)
-                let bry = Double(result.bottomRight.y).truncate(places: 2)
-                let tlx = Double(result.topLeft.x).truncate(places: 2)
-                let tly = Double(result.topLeft.y).truncate(places: 2)
-                let trx = Double(result.topRight.x).truncate(places: 2)
-                let trY = Double(result.topRight.y).truncate(places: 2)
-
-                let bottomLeft = Coordinates(blx, bly)
-                let bottomRight = Coordinates(brx, bry)
-                let topLeft = Coordinates(tlx, tly)
-                let topRight = Coordinates(trx, trY)
-
-                // detected text
-                let text = result.topCandidates(1).first?.string ?? ""
-
-                let result = DetectedText(bottomLeft: bottomLeft, bottomRight: bottomRight, topLeft: topLeft, topRight: topRight, text: text)
-
-                do {
-                    let jsonData = try JSONEncoder().encode(result)
-                    let payload = String(data: jsonData, encoding: .utf8)!
-                    self.detectedText.append(payload)
-                } catch let error as NSError {
-                    print(error.description)
-                    self.call.reject(error.description)
-                }
+            
+            self.detectedText = results.map {
+                [
+                    "topLeft": [Double($0.topLeft.x), Double($0.topLeft.y)],
+                    "topRight": [Double($0.topRight.x), Double($0.topRight.y)],
+                    "bottomLeft": [Double($0.bottomLeft.x), Double($0.bottomLeft.y)],
+                    "bottomRight": [Double($0.bottomRight.x), Double($0.bottomRight.y)],
+                    "text": $0.topCandidates(1).first?.string
+                ]
             }
         }
-    }
-}
-
-extension Double
-{
-    func truncate(places : Int)-> Double
-    {
-        return Double(floor(pow(10.0, Double(places)) * self)/pow(10.0, Double(places)))
-    }
-}
-
-public struct DetectedText: Codable {
-    var bottomLeft: (Coordinates) = Coordinates(0,0)
-    var bottomRight: (Coordinates) = Coordinates(0,0)
-    var topLeft: (Coordinates) = Coordinates(0,0)
-    var topRight: (Coordinates) = Coordinates(0,0)
-    var text: String = ""
-
-    public init(bottomLeft: (Coordinates), bottomRight: (Coordinates), topLeft: (Coordinates), topRight: (Coordinates), text: String) {
-        // Bounding rectangle coordinates for the text
-        self.bottomLeft = bottomLeft
-        self.bottomRight = bottomRight
-        self.topLeft = topLeft
-        self.topRight = topRight
-
-        // Detected text
-        self.text = text
-    }
-}
-
-public struct Coordinates: Codable {
-    var x: Double
-    var y: Double
-
-    public init(_ x: Double, _ y: Double) {
-        self.x = x;
-        self.y = y;
     }
 }
