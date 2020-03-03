@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Plugins, CameraSource, CameraResultType } from '@capacitor/core';
+import { Plugins, CameraSource, CameraResultType, CameraPhoto } from '@capacitor/core';
 const { CapML, Camera } = Plugins;
 
 @Component({
@@ -9,7 +9,7 @@ const { CapML, Camera } = Plugins;
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  private imageFile;
+  private imageFile?: CameraPhoto;
   private textDetections: TextDetection[];
 
   constructor() {}
