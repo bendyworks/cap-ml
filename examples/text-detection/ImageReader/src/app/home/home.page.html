@@ -17,4 +17,28 @@
     <ion-button (click)="detectTextInImage()">Pick a Picture</ion-button>
   </ion-item>
 
+  <div *ngIf="imageFile && imageFile.webPath">
+    <ion-item *ngIf="text">
+      <ion-label position="stacked">Clicked Text: </ion-label>
+      <ion-text>{{text}}</ion-text>
+    </ion-item>
+    <svg #svgContainer [attr.width.px]="scaleX" [attr.height.px]="scaleY">
+      <image [attr.xlink:href]="imageFile.webPath" [attr.width]="scaleX" [attr.height]="scaleY"></image>
+    </svg>
+  </div>
+
+  <div *ngIf="textDetections">
+    <ion-item *ngFor="let textDetection of textDetections" ion-padding>
+      <ion-list>
+        <ion-list-header style="font-size: 1em">
+          {{textDetection.text}}
+        </ion-list-header>
+        <ion-label className="ion-text-wrap">Bottom Left: ({{textDetection.bottomLeft[0]}}, {{textDetection.bottomLeft[1]}})</ion-label>
+        <ion-label className="ion-text-wrap">Bottom Right: ({{textDetection.bottomRight[0]}}, {{textDetection.bottomRight[1]}})</ion-label>
+        <ion-label className="ion-text-wrap">Top Left: ({{textDetection.topLeft[0]}}, {{textDetection.topLeft[1]}})</ion-label>
+        <ion-label className="ion-text-wrap">Top Right: ({{textDetection.topRight[0]}}, {{textDetection.topRight[1]}})</ion-label>
+      </ion-list>
+    </ion-item>
+  </div>
+
 </ion-content>
