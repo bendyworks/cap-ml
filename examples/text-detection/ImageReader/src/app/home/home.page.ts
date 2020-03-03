@@ -10,6 +10,7 @@ const { CapML, Camera } = Plugins;
 })
 export class HomePage implements OnInit {
   private imageFile;
+  private textDetections: TextDetection[];
 
   constructor() {}
 
@@ -22,5 +23,22 @@ export class HomePage implements OnInit {
       source: CameraSource.Photos,
     })
     console.log(this.imageFile.webPath)
+
+    var response = await CapML.detectText({filename: this.imageFile.path!})
+
+    // received Object to array
+    response = Object.values(response.detectedText)
+    // deserialize values in the array
+    this.textDetections = response.map((textDetection: string) => <TextDetection>JSON.parse(textDetection))
+
+    console.log(JSON.stringify(this.textDetections));
   }
+}
+
+interface TextDetection {
+  bottomLeft: string;
+  bottomRight: string;
+  topLeft: string;
+  topRight: string;
+  text: string;
 }
