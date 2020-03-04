@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Text Detection Sample App
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Text Detection</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -17,26 +17,34 @@
     <ion-button (click)="detectTextInImage()">Pick a Picture</ion-button>
   </ion-item>
 
-  <div *ngIf="imageFile && imageFile.webPath">
+  <div *ngIf="imageFile?.webPath">
     <ion-item *ngIf="text">
       <ion-label position="stacked">Clicked Text: </ion-label>
       <ion-text>{{text}}</ion-text>
     </ion-item>
+
     <svg #svgContainer [attr.width.px]="scaleX" [attr.height.px]="scaleY">
       <image [attr.xlink:href]="imageFile.webPath" [attr.width]="scaleX" [attr.height]="scaleY"></image>
     </svg>
   </div>
 
   <div *ngIf="textDetections">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Normalized Coordinates</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
     <ion-item *ngFor="let textDetection of textDetections" ion-padding>
       <ion-list>
         <ion-list-header style="font-size: 1em">
           {{textDetection.text}}
         </ion-list-header>
-        <ion-label className="ion-text-wrap">Bottom Left: ({{textDetection.bottomLeft[0]}}, {{textDetection.bottomLeft[1]}})</ion-label>
-        <ion-label className="ion-text-wrap">Bottom Right: ({{textDetection.bottomRight[0]}}, {{textDetection.bottomRight[1]}})</ion-label>
-        <ion-label className="ion-text-wrap">Top Left: ({{textDetection.topLeft[0]}}, {{textDetection.topLeft[1]}})</ion-label>
-        <ion-label className="ion-text-wrap">Top Right: ({{textDetection.topRight[0]}}, {{textDetection.topRight[1]}})</ion-label>
+
+        <ion-label className="ion-text-wrap">Bottom Left: ({{textDetection.bottomLeft[0] | number:'1.1-2'}}, {{textDetection.bottomLeft[1] | number:'1.1-2'}})</ion-label>
+        <ion-label className="ion-text-wrap">Bottom Right: ({{textDetection.bottomRight[0] | number:'1.1-2'}}, {{textDetection.bottomRight[1] | number:'1.1-2'}})</ion-label>
+        <ion-label className="ion-text-wrap">Top Left: ({{textDetection.topLeft[0] | number:'1.1-2'}}, {{textDetection.topLeft[1] | number:'1.1-2'}})</ion-label>
+        <ion-label className="ion-text-wrap">Top Right: ({{textDetection.topRight[0] | number:'1.1-2'}}, {{textDetection.topRight[1] | number:'1.1-2'}})</ion-label>
       </ion-list>
     </ion-item>
   </div>
