@@ -1,3 +1,3 @@
 export * from './definitions';
 // export * from './web';
-export * from './plugin';
+export * from './text-detector';

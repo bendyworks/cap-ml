@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Plugins, CameraSource, CameraResultType, CameraPhoto } from '@capacitor/core';
 const { Camera } = Plugins;
 
-import { CapMLPlugin } from 'cap-ml';
+import { TextDetector, TextDetection } from 'cap-ml';
 
 @Component({
   selector: 'app-home',
@@ -31,8 +31,8 @@ export class HomePage implements OnInit {
       source: CameraSource.Photos,
     })
 
-    let ml = new CapMLPlugin();
-    this.textDetections = await ml.detectText(this.imageFile.path!)
+    let td = new TextDetector();
+    this.textDetections = await td.detectText(this.imageFile.path!)
     this.drawTextLocationsOnImage();
   }
 
@@ -63,12 +63,4 @@ export class HomePage implements OnInit {
       svgContainer.removeChild(svgContainer.lastChild);
     }
   }
-}
-
-interface TextDetection {
-  bottomLeft: number[];
-  bottomRight: number[];
-  topLeft: number[];
-  topRight: number[];
-  text: string;
 }

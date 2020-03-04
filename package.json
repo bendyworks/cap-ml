@@ -25,6 +25,7 @@
     "dist/",
     "ios/",
     "android/",
+    "src/text-detector",
     "CapMl.podspec"
   ],
   "keywords": [
