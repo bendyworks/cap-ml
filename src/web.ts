@@ -1,5 +1,5 @@
 import { WebPlugin } from '@capacitor/core';
-import { CapMLInterface } from './definitions';
+import { CapMLInterface, TextDetection } from './definitions';
 
 export class CapMLWeb extends WebPlugin implements CapMLInterface {
   constructor() {
@@ -9,7 +9,7 @@ export class CapMLWeb extends WebPlugin implements CapMLInterface {
     });
   }
 
-  async detectText(filename: string): Promise<string> {
+  async detectText(filename: string): Promise<TextDetection[]> {
     return Promise.reject("Web Plugin Not implemented")
   }
 }

@@ -5,5 +5,13 @@ declare module "@capacitor/core" {
 }
 
 export interface CapMLInterface {
-  detectText(filename: string): Promise<string>;
+  detectText(filename: string): Promise<TextDetection[]>;
+}
+
+export interface TextDetection {
+  bottomLeft: number[];
+  bottomRight: number[];
+  topLeft: number[];
+  topRight: number[];
+  text: string;
 }

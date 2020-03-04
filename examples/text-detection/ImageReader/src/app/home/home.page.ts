@@ -32,10 +32,8 @@ export class HomePage implements OnInit {
     })
 
     let ml = new CapMLPlugin();
-    var response = await ml.detectText(this.imageFile.path!)
-    // this.textDetections = response.detectedText;
-    console.log('detectText', response)
-    // this.drawTextLocationsOnImage();
+    this.textDetections = await ml.detectText(this.imageFile.path!)
+    this.drawTextLocationsOnImage();
   }
 
   drawTextLocationsOnImage() {

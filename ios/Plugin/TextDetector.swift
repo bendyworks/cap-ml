@@ -32,7 +32,7 @@ public class TextDetector {
         DispatchQueue.global(qos: .userInitiated).async {
             do {
                 try imageRequestHandler.perform([self.textDetectionRequest])
-                self.call.success(["detectedText": self.detectedText])
+                self.call.success(["textDetections": self.detectedText])
             } catch let error as NSError {
                 print("Failed to perform image request: \(error)")
                 self.call.reject(error.description)

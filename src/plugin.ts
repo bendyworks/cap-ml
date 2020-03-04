@@ -1,12 +1,11 @@
 import { Plugins } from '@capacitor/core';
-import { CapMLInterface } from './definitions';
+import { CapMLInterface, TextDetection } from './definitions';
 const { CapML } = Plugins;
 
 export class CapMLPlugin implements CapMLInterface{
-  // private textDetections: TextDetection;
 
-  detectText(filename: string): Promise<string> {
-    console.log(CapML)
-    return Promise.resolve(filename)
+  async detectText(filename: string): Promise<TextDetection[]> {
+    const response = await CapML.detectText({filename})
+    return response.textDetections
   }
 }
