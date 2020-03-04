@@ -14,6 +14,7 @@ public class TextDetector {
     var detectedText: [[String: Any]] = []
     let call: CAPPluginCall
     let image: UIImage
+    var detectedAlready = false
 
     public init(call: CAPPluginCall, image: UIImage) {
         self.call = call
@@ -21,7 +22,13 @@ public class TextDetector {
     }
 
     public func detectText() {
-        // TODO: fail out if call is already used up
+        // fail out if call is already used up
+        guard !detectedAlready else {
+            self.call.reject("An image has already been processed for text")
+            return
+         }
+        self.detectedAlready = true
+        
         guard let cgImage = image.cgImage else {
             print("Looks like uiImage is nil")
             return
