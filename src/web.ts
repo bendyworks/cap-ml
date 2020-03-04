@@ -1,7 +1,7 @@
 import { WebPlugin } from '@capacitor/core';
-import { CapMLPlugin } from './definitions';
+import { CapMLInterface } from './definitions';
 
-export class CapMLWeb extends WebPlugin implements CapMLPlugin {
+export class CapMLWeb extends WebPlugin implements CapMLInterface {
   constructor() {
     super({
       name: 'CapML',
@@ -9,9 +9,8 @@ export class CapMLWeb extends WebPlugin implements CapMLPlugin {
     });
   }
 
-  async echo(options: { value: string }): Promise<{value: string}> {
-    console.log('ECHO', options);
-    return options;
+  async detectText(filename: string): Promise<string> {
+    return Promise.reject("Web Plugin Not implemented")
   }
 }
 

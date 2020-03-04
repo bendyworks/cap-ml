@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 import { Plugins, CameraSource, CameraResultType, CameraPhoto } from '@capacitor/core';
-const { CapML, Camera } = Plugins;
+const { Camera } = Plugins;
+
+import { CapMLPlugin } from 'cap-ml';
 
 @Component({
   selector: 'app-home',
@@ -20,19 +22,20 @@ export class HomePage implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   async detectTextInImage() {
+
     this.imageFile = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Photos,
     })
 
-    var response = await CapML.detectText({filename: this.imageFile.path!})
-    this.textDetections = response.detectedText;
-
-    this.drawTextLocationsOnImage();
+    let ml = new CapMLPlugin();
+    var response = await ml.detectText(this.imageFile.path!)
+    // this.textDetections = response.detectedText;
+    console.log('detectText', response)
+    // this.drawTextLocationsOnImage();
   }
 
   drawTextLocationsOnImage() {

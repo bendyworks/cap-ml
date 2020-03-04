@@ -1,9 +1,9 @@
 declare module "@capacitor/core" {
   interface PluginRegistry {
-    CapML: CapMLPlugin;
+    CapML: CapMLInterface;
   }
 }
 
-export interface CapMLPlugin {
-  echo(options: { value: string }): Promise<{value: string}>;
+export interface CapMLInterface {
+  detectText(filename: string): Promise<string>;
 }

@@ -26,7 +26,7 @@ public class TextDetector {
             print("Looks like uiImage is nil")
             return
         }
-
+    
         let imageRequestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
 
         DispatchQueue.global(qos: .userInitiated).async {
@@ -58,11 +58,11 @@ public class TextDetector {
             
             self.detectedText = results.map {
                 [
-                    "topLeft": [Double($0.topLeft.x), Double($0.topLeft.y)],
-                    "topRight": [Double($0.topRight.x), Double($0.topRight.y)],
-                    "bottomLeft": [Double($0.bottomLeft.x), Double($0.bottomLeft.y)],
-                    "bottomRight": [Double($0.bottomRight.x), Double($0.bottomRight.y)],
-                    "text": $0.topCandidates(1).first?.string
+                    "topLeft": [Double($0.topLeft.x), Double($0.topLeft.y)] as [Double],
+                    "topRight": [Double($0.topRight.x), Double($0.topRight.y)] as [Double],
+                    "bottomLeft": [Double($0.bottomLeft.x), Double($0.bottomLeft.y)] as [Double],
+                    "bottomRight": [Double($0.bottomRight.x), Double($0.bottomRight.y)] as [Double],
+                    "text": $0.topCandidates(1).first?.string as String?
                 ]
             }
         }
