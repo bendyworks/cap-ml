@@ -88,3 +88,8 @@ After checking out the repo,
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/bendyworks/cap-ml.
+
+
+## License
+Hippocratic License Version 2.0.
+For more information, refer to LICENSE file
