@@ -21,7 +21,7 @@ detectText(filename: string): Promise<TextDetection[]>
 ```
 TextDetection looks like  -
 ```
-TextDetection {
+interface TextDetection {
   bottomLeft: number[]; // [x-coordinate, y-coordinate]
   bottomRight: number[]; // [x-coordinate, y-coordinate]
   topLeft: number[]; // [x-coordinate, y-coordinate]
@@ -29,10 +29,10 @@ TextDetection {
   text: string;
 }
 ```
-bottomLeft[x,y], bottomRight[x,y], topLeft[x,y], topRight[x,y] provide the coordinates for the bounding rectangle for the detected 'text'.
+bottomLeft[x,y], bottomRight[x,y], topLeft[x,y], topRight[x,y] provide the coordinates for the bounding quadrangle for the detected 'text'. Often, this would be a rectangle, but the text might be skewed.
 
 
-## Example Usage-
+## Example Usage
 
 ```
 import { Plugins } from '@capacitor/core';
@@ -82,6 +82,9 @@ After checking out the repo,
   - navigate to examples/text-detection/ImageReader
   - run `npx capacitor open ios` to open up an XCode project.
   - Run the XCode project either on a simulator or a device.
+  - For each change in the javascript part of the app, run `npm run build && npx cap sync ios` to deploy the corresponding changes to ios app
+    (or)
+  - (recommended) Enable live reload of the app, using `ionic capacitor run ios --livereload`
   Plugin code is located at Pods/DevelopmentPods/CapML
   - `Plugin.swift` is the entry point to the Plugin.
 
