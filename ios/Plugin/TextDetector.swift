@@ -14,6 +14,7 @@ public class TextDetector {
     var detectedText: [[String: Any]] = []
     let call: CAPPluginCall
     let image: UIImage
+    var detectedAlready = false
 
     public init(call: CAPPluginCall, image: UIImage) {
         self.call = call
@@ -21,18 +22,25 @@ public class TextDetector {
     }
 
     public func detectText() {
-        // TODO: fail out if call is already used up
+        // fail out if call is already used up
+        guard !detectedAlready else {
+            self.call.reject("An image has already been processed for text. Please instantiate a new TextDetector object.")
+            return
+         }
+        self.detectedAlready = true
+        
         guard let cgImage = image.cgImage else {
             print("Looks like uiImage is nil")
             return
         }
-
+    
+        // VNImageRequestHandler processes image analysis requests on a single image.
         let imageRequestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
 
         DispatchQueue.global(qos: .userInitiated).async {
             do {
                 try imageRequestHandler.perform([self.textDetectionRequest])
-                self.call.success(["detectedText": self.detectedText])
+                self.call.success(["textDetections": self.detectedText])
             } catch let error as NSError {
                 print("Failed to perform image request: \(error)")
                 self.call.reject(error.description)
@@ -41,6 +49,7 @@ public class TextDetector {
     }
 
     lazy var textDetectionRequest: VNRecognizeTextRequest = {
+        // Specifying the image analysis request to perform - text detection here
         let textDetectRequest = VNRecognizeTextRequest(completionHandler: handleDetectedText)
         return textDetectRequest
     }()
@@ -51,20 +60,20 @@ public class TextDetector {
             return
         }
         DispatchQueue.main.async {
+            //  VNRecognizedTextObservation contains information about both the location and
+            //  content of text and glyphs that Vision recognized in the input image.
             guard let results = request?.results as? [VNRecognizedTextObservation] else {
                 self.call.reject("error")
                 return
             }
             
-            self.detectedText = results.map {
-                [
-                    "topLeft": [Double($0.topLeft.x), Double($0.topLeft.y)],
-                    "topRight": [Double($0.topRight.x), Double($0.topRight.y)],
-                    "bottomLeft": [Double($0.bottomLeft.x), Double($0.bottomLeft.y)],
-                    "bottomRight": [Double($0.bottomRight.x), Double($0.bottomRight.y)],
-                    "text": $0.topCandidates(1).first?.string
-                ]
-            }
+            self.detectedText = results.map {[
+                "topLeft": [Double($0.topLeft.x), Double($0.topLeft.y)] as [Double],
+                "topRight": [Double($0.topRight.x), Double($0.topRight.y)] as [Double],
+                "bottomLeft": [Double($0.bottomLeft.x), Double($0.bottomLeft.y)] as [Double],
+                "bottomRight": [Double($0.bottomRight.x), Double($0.bottomRight.y)] as [Double],
+                "text": $0.topCandidates(1).first?.string as String?
+            ]}
         }
     }
 }

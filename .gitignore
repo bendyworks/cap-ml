@@ -2,6 +2,7 @@
 
 node_modules
 tmp
+dist
 .DS_Store
 
 # Xcode

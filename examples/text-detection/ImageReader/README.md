@@ -3,6 +3,7 @@
 Sample Ionic+Angular App that uses 'cap-ml' plugin to detect text in images
 
 ## Install Prerequisites
+
 This is an Ionic Project, so install ionic globally like this -
 `npm install -g @ionic/cli`
 
@@ -12,7 +13,6 @@ This is an Ionic Project, so install ionic globally like this -
 - Navigate to examples/text-detection/ImageReader
 - Install dependencies - `npm install`
 - Build the project - `npm run build` or `ionic build`
-- Make sure the app is running fine without issues - `ionic serve` This will run the app and serve it on localhost.
 - Since this is really an ios Plugin, open the app in XCode using `npx cap open ios`
 - Once XCode opens up, run the app either on a simulator or device.
 - Once the app opens up, click on 'Pick a Picture' and select a picture with some text.
@@ -22,3 +22,8 @@ This is an Ionic Project, so install ionic globally like this -
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/bendyworks/cap-ml.
+
+## License
+Hippocratic License Version 2.0.
+
+For more information, refer to LICENSE file
