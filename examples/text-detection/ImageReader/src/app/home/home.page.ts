@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { Plugins, CameraSource, CameraResultType, CameraPhoto } from '@capacitor/core';
 import { TextDetector, TextDetection } from 'cap-ml';
-
 const { Camera } = Plugins;
 
 @Component({
