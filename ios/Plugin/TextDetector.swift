@@ -24,7 +24,7 @@ public class TextDetector {
     public func detectText() {
         // fail out if call is already used up
         guard !detectedAlready else {
-            self.call.reject("An image has already been processed for text")
+            self.call.reject("An image has already been processed for text. Please instantiate a new TextDetector object.")
             return
          }
         self.detectedAlready = true
