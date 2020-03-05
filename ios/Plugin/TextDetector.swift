@@ -34,6 +34,7 @@ public class TextDetector {
             return
         }
     
+        // VNImageRequestHandler processes image analysis requests on a single image.
         let imageRequestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
 
         DispatchQueue.global(qos: .userInitiated).async {
@@ -48,6 +49,7 @@ public class TextDetector {
     }
 
     lazy var textDetectionRequest: VNRecognizeTextRequest = {
+        // Specifying the image analysis request to perform - text detection here
         let textDetectRequest = VNRecognizeTextRequest(completionHandler: handleDetectedText)
         return textDetectRequest
     }()
@@ -58,6 +60,8 @@ public class TextDetector {
             return
         }
         DispatchQueue.main.async {
+            //  VNRecognizedTextObservation contains information about both the location and
+            //  content of text and glyphs that Vision recognized in the input image.
             guard let results = request?.results as? [VNRecognizedTextObservation] else {
                 self.call.reject("error")
                 return
