@@ -1,10 +1,11 @@
 # Cap-ML
 
-Machine Learning Plugin for Capacitor. Here are the features currently offered -
-  - Text Detection in still images:
-    We're using Apple's Vision Framework. There are some limitations like not being able to detect cursive/handwriting font etc.
-    (It is also assumed that the picture is sent in portrait mode. )
+Machine Learning Plugin for Capacitor. Currently offered implementations include -
+  - Text Detector: Text Detection in still images.
 
+    We're using Apple's Vision Framework which has some limitations like not being able to detect cursive/handwriting font etc.
+
+    TextDetector expects the image to be sent in portrait mode only, i.e. with text facing up. It will try to process even otherwise, but note that it might result in gibberish.
 
 ## Installation
 

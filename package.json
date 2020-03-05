@@ -13,8 +13,7 @@
   "author": "Vennela Kodali",
   "license": "Apache v2",
   "dependencies": {
-    "@capacitor/core": "latest",
-    "rah-rah": "^2.0.0"
+    "@capacitor/core": "latest"
   },
   "devDependencies": {
     "rimraf": "^3.0.0",
