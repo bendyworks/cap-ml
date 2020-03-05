@@ -25,4 +25,5 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/bendyw
 
 ## License
 Hippocratic License Version 2.0.
+
 For more information, refer to LICENSE file
