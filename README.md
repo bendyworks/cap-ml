@@ -14,6 +14,26 @@ npm install cap-ml
 
 ## Usage
 
+TextDetector exposes only one method `detectText` that returns a Promise with an array of text detections -
+```
+detectText(filename: string): Promise<TextDetection[]>
+
+```
+TextDetection looks like  -
+```
+TextDetection {
+  bottomLeft: number[]; // [x-coordinate, y-coordinate]
+  bottomRight: number[]; // [x-coordinate, y-coordinate]
+  topLeft: number[]; // [x-coordinate, y-coordinate]
+  topRight: number[]; // [x-coordinate, y-coordinate]
+  text: string;
+}
+```
+bottomLeft[x,y], bottomRight[x,y], topLeft[x,y], topRight[x,y] provide the coordinates for the bounding rectangle for the detected 'text'.
+
+
+## Example Usage-
+
 ```
 import { Plugins } from '@capacitor/core';
 const { Camera } = Plugins;
@@ -45,15 +65,25 @@ and used like:
 ```
   A complete example can be found in the examples folder - examples/text-detection/ImageReader
 
+  If you're planning to use the Camera Plugin like above or use an image from the Photo Library -
+  - Open the app in XCode by running `npx cap open ios` from the sample app's root directory. ie here,at examples/TextDetector/ImageReader
+  - Open info.plist
+  - Add the corresponding permissions to the app -
+    - Privacy - Camera Usage Description: To Take Photos and Video
+    - Privacy - Photo Library Additions Usage Description: Store camera photos to camera
+    - Privacy - Photo Library Usage Description: To Pick Photos from Library
+
 ## Development
 
-After checking out the repo, run `npm install` to install dependencies.
-To test it out,
+After checking out the repo,
+  - run `npm install` to install dependencies.
+  - run `npx cap sync` to sync with ios and install pods
+  Plugin should be ready at this point. To test it out -
   - navigate to examples/text-detection/ImageReader
-  - run `npm install`
-  - run `npx capacitor open ios`. This opens an XCode project.
+  - run `npx capacitor open ios` to open up an XCode project.
   - Run the XCode project either on a simulator or a device.
-TODO: these instructions look very straight forward. Repeat the process to make sure all steps are covered and what problems might occur ??
+  Plugin code is located at Pods/DevelopmentPods/CapML
+  - `Plugin.swift` is the entry point to the Plugin.
 
 ## Contributing
 

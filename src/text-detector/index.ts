@@ -14,9 +14,9 @@ export interface TextDetectorInterface {
 }
 
 export interface TextDetection {
-  bottomLeft: number[];
-  bottomRight: number[];
-  topLeft: number[];
-  topRight: number[];
+  bottomLeft: number[]; // [x-coordinate, y-coordinate]
+  bottomRight: number[]; // [x-coordinate, y-coordinate]
+  topLeft: number[]; // [x-coordinate, y-coordinate]
+  topRight: number[]; // [x-coordinate, y-coordinate]
   text: string;
 }
