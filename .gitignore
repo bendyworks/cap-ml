@@ -5,9 +5,12 @@ tmp
 dist
 .DS_Store
 
+
 # Gradle files
 .gradle/
 build/
+
+*.iml
 
 # Xcode
 #
