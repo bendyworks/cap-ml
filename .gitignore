@@ -5,6 +5,10 @@ tmp
 dist
 .DS_Store
 
+# Gradle files
+.gradle/
+build/
+
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
