@@ -7,9 +7,5 @@
   "cordova": {},
   "ios": {
     "minVersion": "13.0"
-  },
-  "server": {
-    "url": "http://localhost:8100",
-    "cleartext": true
   }
 }

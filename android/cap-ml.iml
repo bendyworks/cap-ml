@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":cap-ml" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/../examples/text-detection/ImageReader/android" external.system.id="GRADLE" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="android-gradle" name="Android-Gradle">
+      <configuration>
+        <option name="GRADLE_PROJECT_PATH" value=":cap-ml" />
+        <option name="LAST_SUCCESSFUL_SYNC_AGP_VERSION" value="3.6.1" />
+        <option name="LAST_KNOWN_AGP_VERSION" value="3.6.1" />
+      </configuration>
+    </facet>
+    <facet type="android" name="Android">
+      <configuration>
+        <option name="SELECTED_BUILD_VARIANT" value="debug" />
+        <option name="ASSEMBLE_TASK_NAME" value="assembleDebug" />
+        <option name="COMPILE_JAVA_TASK_NAME" value="compileDebugSources" />
+        <afterSyncTasks>
+          <task>generateDebugSources</task>
+        </afterSyncTasks>
+        <option name="ALLOW_USER_CONFIGURATION" value="false" />
+        <option name="MANIFEST_FILE_RELATIVE_PATH" value="/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/main/AndroidManifest.xml" />
+        <option name="RES_FOLDER_RELATIVE_PATH" value="/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/main/res" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/main/res;file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/res/google-services/debug" />
+        <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="" />
+        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/main/assets" />
+        <option name="PROJECT_TYPE" value="1" />
+      </configuration>
+    </facet>
+    <facet type="kotlin-language" name="Kotlin">
+      <configuration version="3" platform="JVM 1.6" allPlatforms="JVM [1.6]" useProjectSettings="false">
+        <compilerSettings>
+          <option name="additionalArguments" value="-Xallow-no-source-files" />
+        </compilerSettings>
+        <compilerArguments>
+          <option name="destination" value="$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/tmp/kotlin-classes/debug" />
+          <option name="classpath" value="$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/intermediates/compile_only_not_namespaced_r_class_jar/debug/R.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/fd4b4126c25eeb41919f732733549864/jetified-kotlin-android-extensions-runtime-1.3.70.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/31a956d64a4b364997cda8eb27b0b606/jetified-core-ktx-1.3.0-alpha02-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/d64bdc27435503ffe46156e1edbdff54/jetified-kotlin-stdlib-jdk7-1.3.70.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/6e07df2146454852cc41fdc43b13c39e/jetified-kotlin-stdlib-1.3.70.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/0d125797daf8f2132957a6698505fd68/jetified-kotlin-stdlib-common-1.3.70.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/e4851d47e29837263c371beec85707bc/jetified-annotations-13.0.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/78fb862001d670248181f70258c2691a/jetified-firebase-ml-vision-24.0.1-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/207bb2e90ef43431b579d8ca35db0848/jetified-play-services-auth-base-17.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/8e1159be8711af644962d7b3ef2caf7f/jetified-play-services-vision-19.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/a57947f8f961b9e89c269ab46e935c53/jetified-play-services-vision-image-label-18.0.1-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/d16a5cdc875eecdcd845a90f72f5e11e/jetified-play-services-vision-common-19.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/94aacf152f976d808a8c4c4cb07d8cec/jetified-firebase-ml-common-22.0.1-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/9d82260b9ac8e07c1b081c64568db0bb/jetified-play-services-clearcut-17.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/cabd430c07a500dc2b29ad4e1ff20f51/jetified-play-services-flags-17.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/cf2cb62b962b5f5e5fdcbccdaee80a79/jetified-play-services-phenotype-17.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/8d66be2f31244627b6b3bf56eea2b633/jetified-firebase-analytics-17.2.3-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/ecf8d24e6478b1850fc78d05f90b22cf/jetified-play-services-measurement-api-17.2.3-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/e53bb3c79ba34727e905a31c6d2da6d2/jetified-firebase-iid-20.0.2-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/0d4579016522b48fbc2d3a385625c0e3/jetified-firebase-iid-interop-17.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/23562cf9c69fde1ba75cc54d0602bcc8/jetified-play-services-base-17.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/5fc3a02636968827568b70b61b924e2b/jetified-play-services-measurement-17.2.3-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/16fe8c61f93e3c0e52cddae27dc3332c/jetified-play-services-measurement-sdk-17.2.3-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/c2d44301fc440878bdf06816346d8c9e/jetified-firebase-common-19.3.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/90c5fa44629b6c835cf8f92e87394827/jetified-play-services-tasks-17.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/875960b2a4dfbc6cc86d720c8198bb9d/jetified-play-services-measurement-impl-17.2.3-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/ec02bf9b2db21d89a1d2bba4811ffd39/jetified-play-services-measurement-sdk-api-17.2.3-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/bd1585ba3374df1de0d4d1b05f12036e/jetified-play-services-measurement-base-17.2.3-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/603d8a2bca5ab19dce76087bec934ab6/jetified-play-services-stats-17.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/257439d1f38d7ed3608f6f92fc15c171/jetified-firebase-measurement-connector-18.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/77ceb9a670b6573b1c428f78fa0a5d4a/jetified-play-services-ads-identifier-17.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/5794a8f998a6aca3f2b15b33c14074a5/jetified-play-services-basement-17.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/cdb6f2e7f41d3ee0707b1fb0d56f0656/fragment-1.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/e792ec83f5c7c4bef2f3dee2587014b3/legacy-support-core-ui-1.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/2d9dcbff30c245c1c5821263a50514de/legacy-support-core-utils-1.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/e805f13ccd548fb290e6c1ae18030aea/loader-1.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/d800b31955e9103f2c7f20da94e8ce90/viewpager-1.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/890dedcb2bd871d7aca59f23857abb86/coordinatorlayout-1.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/23e551600177926ed1262aabbd2d52b7/drawerlayout-1.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/2b8e407cf0fd65a828fb25fa544fbe82/slidingpanelayout-1.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/a245c6f677d7859976bf6846f5d2b04d/customview-1.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/aed350750ebadbd9b41b084046fa6e3a/swiperefreshlayout-1.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/cbdda02e7ba1a5dd86f1f7c57ebe60b6/asynclayoutinflater-1.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/ed02429b1f74913fbea7fc4c99b600c0/core-1.3.0-alpha02-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/a17e691bf830f28627ed9599a4b426d1/exifinterface-1.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/9c7bee64c9b12f715ff5bc5da4178758/lifecycle-runtime-2.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/c7d4fcff32e1e13a1331e6ca393ee989/versionedparcelable-1.1.0-api.jar:/Users/vennelakodali/.gradle/caches/modules-2/files-2.1/androidx.collection/collection/1.0.0/42858b26cafdaa69b6149f45dfc2894007bc2c7a/collection-1.0.0.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/265493fbd2ac415f5ddbb75dec0cae6f/jetified-firebase-components-16.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/9f1f2749231ef4447fea222e4ae93370/lifecycle-livedata-2.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/8685bebc49b253d0d4c0d811d7c085a3/lifecycle-livedata-core-2.0.0-api.jar:/Users/vennelakodali/.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-common/2.0.0/e070ffae07452331bc5684734fce6831d531785c/lifecycle-common-2.0.0.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/0ad78ea69e7b8279710e2a4b3b5f8e97/core-runtime-2.0.0-api.jar:/Users/vennelakodali/.gradle/caches/modules-2/files-2.1/androidx.arch.core/core-common/2.0.0/bb21b9a11761451b51624ac428d1f1bb5deeac38/core-common-2.0.0.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/bfca002bbc288856e8a31395bd167ad7/documentfile-1.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/17619bc547f8833ec74568e9ec96f4aa/localbroadcastmanager-1.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/9ff8abb921d230c8ee136b0fdac8339c/print-1.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/c165b0fca603341d72c1dad80188389f/lifecycle-viewmodel-2.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/6369f37afcedef0760db05384d5eac06/interpolator-1.0.0-api.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/a39d5f5cf36f2fabbd551ff3e0dfeebc/cursoradapter-1.0.0-api.jar:/Users/vennelakodali/.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation/1.1.0/e3a6fb2f40e3a3842e6b7472628ba4ce416ea4c8/annotation-1.1.0.jar:/Users/vennelakodali/.gradle/caches/transforms-2/files-2.1/d5199c1966d712c8a337f9d6edfea04a/jetified-auto-value-annotations-1.6.5.jar:/Users/vennelakodali/bendyworks/cap-ml/examples/text-detection/ImageReader/node_modules/@capacitor/android/capacitor/build/intermediates/compile_library_classes/debug/classes.jar:/Users/vennelakodali/Library/Android/sdk/platforms/android-28/android.jar" />
+          <option name="noStdlib" value="true" />
+          <option name="noReflect" value="true" />
+          <option name="moduleName" value="cap-ml_debug" />
+          <option name="languageVersion" value="1.3" />
+          <option name="apiVersion" value="1.3" />
+          <option name="pluginOptions">
+            <array>
+              <option value="plugin:org.jetbrains.kotlin.android:experimental=false" />
+              <option value="plugin:org.jetbrains.kotlin.android:enabled=true" />
+              <option value="plugin:org.jetbrains.kotlin.android:defaultCacheImplementation=hashMap" />
+            </array>
+          </option>
+          <option name="pluginClasspaths">
+            <array>
+              <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.intellij.deps/trove4j/1.0.20181211/216c2e14b070f334479d800987affe4054cd563f/trove4j-1.0.20181211.jar" />
+              <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-android-extensions/1.3.70/3a57c3118c2af9a47fbf8d189653ca7f920ec7db/kotlin-android-extensions-1.3.70.jar" />
+              <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-compiler-embeddable/1.3.70/ffdb726044ef157be84b9c003b1332430aadea9f/kotlin-compiler-embeddable-1.3.70.jar" />
+              <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-daemon-embeddable/1.3.70/2e8b285baf0e62b1b61edefe61d029d535551d6a/kotlin-daemon-embeddable-1.3.70.jar" />
+              <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.3.70/75a87c4141e55abbaf418b8495550ced8894045d/kotlin-reflect-1.3.70.jar" />
+              <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-script-runtime/1.3.70/28a3923786ef1a651ebea81ff0f211dfd7436070/kotlin-script-runtime-1.3.70.jar" />
+              <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.70/3fa8dd6c896d635e78201e5e811545f3846dec04/kotlin-stdlib-common-1.3.70.jar" />
+              <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.70/e5d97e25bb5b30dcfc022ec1c8f3959a875257fb/kotlin-stdlib-1.3.70.jar" />
+              <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar" />
+            </array>
+          </option>
+          <option name="errors">
+            <ArgumentParseErrors />
+          </option>
+        </compilerArguments>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
+    <output url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/intermediates/javac/debug/classes" />
+    <output-test url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/intermediates/javac/debugUnitTest/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/aidl_source_output_dir/debug/out">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/aidl_source_output_dir/debug/out" isTestSource="false" generated="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/aidl_source_output_dir/debugAndroidTest/out">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/aidl_source_output_dir/debugAndroidTest/out" isTestSource="true" generated="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/ap_generated_sources/debug/out">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/ap_generated_sources/debugAndroidTest/out">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/ap_generated_sources/debugAndroidTest/out" isTestSource="true" generated="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/ap_generated_sources/debugUnitTest/out">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/ap_generated_sources/debugUnitTest/out" isTestSource="true" generated="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/renderscript_source_output_dir/debug/out">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/renderscript_source_output_dir/debug/out" isTestSource="false" generated="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/renderscript_source_output_dir/debugAndroidTest/out">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/renderscript_source_output_dir/debugAndroidTest/out" isTestSource="true" generated="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/res/google-services/debug">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/res/google-services/debug" type="java-resource" generated="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/res/rs/androidTest/debug">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/res/rs/androidTest/debug" type="java-test-resource" generated="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/res/rs/debug">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/res/rs/debug" type="java-resource" generated="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/source/buildConfig/androidTest/debug">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/source/buildConfig/androidTest/debug" isTestSource="true" generated="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/source/buildConfig/debug">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTest/aidl">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTest/aidl" isTestSource="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTest/assets">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTest/assets" type="java-test-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTest/java">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTest/java" isTestSource="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTest/res">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTest/res" type="java-test-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTest/resources">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTest/resources" type="java-test-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTest/rs">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTest/rs" isTestSource="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTest/shaders">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTest/shaders" isTestSource="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTestDebug/aidl">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTestDebug/aidl" isTestSource="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTestDebug/assets">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTestDebug/assets" type="java-test-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTestDebug/java">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTestDebug/java" isTestSource="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTestDebug/res">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTestDebug/res" type="java-test-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTestDebug/resources">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTestDebug/resources" type="java-test-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTestDebug/rs">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTestDebug/rs" isTestSource="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTestDebug/shaders">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/androidTestDebug/shaders" isTestSource="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/debug/aidl">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/debug/aidl" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/debug/assets">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/debug/assets" type="java-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/debug/java">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/debug/java" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/debug/res">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/debug/res" type="java-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/debug/resources">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/debug/resources" type="java-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/debug/rs">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/debug/rs" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/debug/shaders">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/debug/shaders" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/main/aidl">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/main/aidl" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/main/assets">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/main/assets" type="java-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/main/java">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/main/java" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/main/res">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/main/res" type="java-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/main/resources">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/main/resources" type="java-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/main/rs">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/main/rs" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/main/shaders">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/main/shaders" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/test/aidl">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/test/aidl" isTestSource="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/test/assets">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/test/assets" type="java-test-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/test/java">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/test/java" isTestSource="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/test/res">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/test/res" type="java-test-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/test/resources">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/test/resources" type="java-test-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/test/rs">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/test/rs" isTestSource="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/test/shaders">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/test/shaders" isTestSource="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/testDebug/aidl">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/testDebug/aidl" isTestSource="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/testDebug/assets">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/testDebug/assets" type="java-test-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/testDebug/java">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/testDebug/java" isTestSource="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/testDebug/res">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/testDebug/res" type="java-test-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/testDebug/resources">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/testDebug/resources" type="java-test-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/testDebug/rs">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/testDebug/rs" isTestSource="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/testDebug/shaders">
+      <sourceFolder url="file://$MODULE_DIR$/../examples/text-detection/ImageReader/node_modules/cap-ml/android/src/testDebug/shaders" isTestSource="true" />
+    </content>
+    <orderEntry type="jdk" jdkName="Android API 28 Platform" jdkType="Android SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:4.12@jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-integration:1.3@jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-library:1.3@jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-core:1.3@jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: net.sf.kxml:kxml2:2.3.0@jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.squareup:javawriter:2.1.1@jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: javax.inject:javax.inject:1@jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.code.findbugs:jsr305:2.0.1@jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: androidx.test.ext:junit:1.1.1@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: androidx.test.espresso:espresso-core:3.1.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: androidx.test:runner:1.1.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: androidx.test:core:1.2.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: androidx.test:monitor:1.2.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: androidx.test.espresso:espresso-idling-resource:3.1.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.3.70@jar" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.70@jar" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.3.70@jar" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.3.70@jar" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains:annotations:13.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.collection:collection:1.0.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-common:2.0.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.arch.core:core-common:2.0.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.annotation:annotation:1.1.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.auto.value:auto-value-annotations:1.6.5@jar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.core:core-ktx:1.3.0-alpha02@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.firebase:firebase-ml-vision:24.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-auth-base:17.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-vision:19.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-vision-image-label:18.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-vision-common:19.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.firebase:firebase-ml-common:22.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-clearcut:17.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-flags:17.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-phenotype:17.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.firebase:firebase-analytics:17.2.3@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-measurement-api:17.2.3@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.firebase:firebase-iid:20.0.2@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.firebase:firebase-iid-interop:17.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-base:17.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-measurement:17.2.3@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-measurement-sdk:17.2.3@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.firebase:firebase-common:19.3.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-tasks:17.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-measurement-impl:17.2.3@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-measurement-sdk-api:17.2.3@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-measurement-base:17.2.3@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-stats:17.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.firebase:firebase-measurement-connector:18.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-ads-identifier:17.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-basement:17.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.fragment:fragment:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.legacy:legacy-support-core-ui:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.legacy:legacy-support-core-utils:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.loader:loader:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.viewpager:viewpager:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.coordinatorlayout:coordinatorlayout:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.drawerlayout:drawerlayout:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.slidingpanelayout:slidingpanelayout:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.customview:customview:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.core:core:1.3.0-alpha02@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.exifinterface:exifinterface:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-runtime:2.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.versionedparcelable:versionedparcelable:1.1.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.firebase:firebase-components:16.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-livedata:2.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-livedata-core:2.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.arch.core:core-runtime:2.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.documentfile:documentfile:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.print:print:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-viewmodel:2.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.interpolator:interpolator:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.cursoradapter:cursoradapter:1.0.0@aar" level="project" />
+    <orderEntry type="module" module-name="capacitor-android" />
+  </component>
+</module>
