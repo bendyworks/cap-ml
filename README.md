@@ -64,23 +64,40 @@ and used like:
     topRight = detection.topRight
   })
 ```
+
+If you're using it in an Android app (generated through Ionic), there is an additional step. Make sure to register the plugin in the app's MainActivity.java
+    - Import the Plugin: `import com.bendyworks.capML.CapML`
+    - Register the Plugin: On the same file, inside OnCreate's init, add  - `add(CapML.class)`
+
   A complete example can be found in the examples folder - examples/text-detection/ImageReader
 
-  If you're planning to use the Camera Plugin like above or use an image from the Photo Library -
-  - Open the app in XCode by running `npx cap open ios` from the sample app's root directory. ie here,at examples/TextDetector/ImageReader
+  If you're planning to use the Camera Plugin like in the example project or use an image from the Photo Library -
+
+  For ios:
+  - Open the app in XCode by running `npx cap open ios` from the sample app's root directory. ie here, at examples/text-detection/ImageReader
   - Open info.plist
   - Add the corresponding permissions to the app -
     - Privacy - Camera Usage Description: To Take Photos and Video
     - Privacy - Photo Library Additions Usage Description: Store camera photos to camera
     - Privacy - Photo Library Usage Description: To Pick Photos from Library
 
+  For Android:
+  - Open the app in Android Studio by running `npx cap open android` from the sample app's root directory. ie here, at examples/text-detection/ImageReader
+  - Open app/manifests/AndroidManifest.xml
+  - Add the corresponding permissions to the app -
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
 ## Development
 
 After checking out the repo,
   - run `npm install` to install dependencies.
-  - run `npx cap sync` to sync with ios and install pods
   Plugin should be ready at this point. To test it out -
   - navigate to examples/text-detection/ImageReader
+  - run `npm install` to install dependencies
+  - run `npm run build && npx cap sync` to sync the project with ios and android
 
   ### ios Development
   - run `npx capacitor open ios` to open up an XCode project.
@@ -92,19 +109,50 @@ After checking out the repo,
   - `Plugin.swift` is the entry point to the Plugin.
 
   ### Android Development
+  Step 1: Open Android Project
+
   - run `npx capacitor open android` to open up an Android Studio project.
-  - Run the project either on a simulator or a device.
+
+  Step 2: Create Firebase Project and App
+
+  - Naviagte to https://console.firebase.google.com/ and sign-in
+
+  - Click on 'Add Project' and follow through the steps (Enable Google Analytics if you like but the project doesn't particularly need it)
+
+  - Once the project is created, click on 'android' icon to create an android app.
+
+  - Register App:
+    - Enter the package name - this should be the same as the package name of your app.
+      For example - package name in the example project here is `com.bendyworks.CapML.ImageReader`. Enter that if you wish to run the sample project. If you're setting up a new project, enter the package name of that app. (Tip: You can find it in app/AndroidManifest.xml). Click 'Register App'
+    - Download google-services.json
+    - Place the downloaded google-services.json in your project's app directory.
+
+  - Add Firebase SDK:
+    Example project should already this is place, but if you're setting up a new project, follow the instructions to modify build.gradle to use the downloaded google-services.json
+
+  - Once the build changes are in place, perform a Gradle sync at this point. (Android Studio will prompt for a gradle sync as soon as a change is made to build files)
+
+  Step 3: Making changes and running the app
+  - The example project is already setup to use the plugin, but if you're setting up a new project -
+      In the project's MainActivity.java -
+        - Import the Plugin: `import com.bendyworks.capML.CapML`
+        - Register the Plugin: On the same file, inside OnCreate's init, add  - `add(CapML.class)`
+
+  - Build and Run the project either on a simulator or a device.
+
   - For each change in the javascript part of the app, run `npm run build && npx cap sync android` to deploy the corresponding changes to android app
+
     (or)
   - (recommended) Enable live reload of the app, using `ionic capacitor run android --livereload`
+
   - Plugin code is located at `android-cap-ml/java/com.bendyworks.capML`
+
   - `CapML.java` is the entry point to the Plugin.
     (Note: When plugin code is updated, make sure to rebuild the project before running it.)
 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/bendyworks/cap-ml.
-
 
 ## License
 Hippocratic License Version 2.0.
