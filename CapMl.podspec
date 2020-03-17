@@ -3,7 +3,7 @@
     s.name = 'CapMl'
     s.version = '0.0.1'
     s.summary = 'Machine Learning Plugin for Capacitor'
-    s.license = 'Apache v2'
+    s.license = 'Hippocratic License Version 2.0'
     s.homepage = 'git@github.com:bendyworks/cap-ml'
     s.author = 'Vennela Kodali'
     s.source = { :git => 'git@github.com:bendyworks/cap-ml', :tag => s.version.to_s }

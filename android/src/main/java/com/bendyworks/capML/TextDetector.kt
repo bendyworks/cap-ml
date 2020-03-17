@@ -37,8 +37,7 @@ class TextDetector {
               val rect: Rect = line.boundingBox ?: throw NoSuchPropertyException("FirebaseVisionTextRecognizer.processImage: could not get bounding coordinates")
 
               val textDetection = mapOf(
-                // normalizing coordinates and switching to 1st quadrant ie origin(0,0) as bottom left
-                // in order to match the result with that of core-ml's Vision framework.
+                // normalizing coordinates
                 "topLeft" to listOf<Double?>((rect.left).toDouble()/width, (height - rect.top).toDouble()/height),
                 "topRight" to listOf<Double?>((rect.right).toDouble()/width, (height - rect.top).toDouble()/height),
                 "bottomLeft" to listOf<Double?>((rect.left).toDouble()/width, (height - rect.bottom).toDouble()/height),

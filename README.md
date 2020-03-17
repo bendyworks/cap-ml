@@ -3,7 +3,7 @@
 Machine Learning Plugin for Capacitor. Currently offered implementations include -
   - Text Detector: Text Detection in still images.
 
-    We're using Apple's Vision Framework which has some limitations like not being able to detect cursive/handwriting font etc.
+    On the ios side, we're using Apple's Vision Framework and MLKit's Vision Framework on the Android side. Both have some limitations like not being able to detect cursive/handwriting font etc.
 
     TextDetector expects the image to be sent in portrait mode only, i.e. with text facing up. It will try to process even otherwise, but note that it might result in gibberish.
 
@@ -81,6 +81,8 @@ After checking out the repo,
   - run `npx cap sync` to sync with ios and install pods
   Plugin should be ready at this point. To test it out -
   - navigate to examples/text-detection/ImageReader
+
+  ### ios Development
   - run `npx capacitor open ios` to open up an XCode project.
   - Run the XCode project either on a simulator or a device.
   - For each change in the javascript part of the app, run `npm run build && npx cap sync ios` to deploy the corresponding changes to ios app
@@ -88,6 +90,16 @@ After checking out the repo,
   - (recommended) Enable live reload of the app, using `ionic capacitor run ios --livereload`
   Plugin code is located at Pods/DevelopmentPods/CapML
   - `Plugin.swift` is the entry point to the Plugin.
+
+  ### Android Development
+  - run `npx capacitor open android` to open up an Android Studio project.
+  - Run the project either on a simulator or a device.
+  - For each change in the javascript part of the app, run `npm run build && npx cap sync android` to deploy the corresponding changes to android app
+    (or)
+  - (recommended) Enable live reload of the app, using `ionic capacitor run android --livereload`
+  - Plugin code is located at `android-cap-ml/java/com.bendyworks.capML`
+  - `CapML.java` is the entry point to the Plugin.
+    (Note: When plugin code is updated, make sure to rebuild the project before running it.)
 
 ## Contributing
 
