@@ -109,11 +109,11 @@ After checking out the repo,
   - `Plugin.swift` is the entry point to the Plugin.
 
   ### Android Development
-  Step 1: Open Android Project
+  #### Step 1: Open Android Project
 
   - run `npx capacitor open android` to open up an Android Studio project.
 
-  Step 2: Create Firebase Project and App
+  #### Step 2: Create Firebase Project and App
 
   - Naviagte to https://console.firebase.google.com/ and sign-in
 
@@ -132,7 +132,7 @@ After checking out the repo,
 
   - Once the build changes are in place, perform a Gradle sync at this point. (Android Studio will prompt for a gradle sync as soon as a change is made to build files)
 
-  Step 3: Making changes and running the app
+  #### Step 3: Making changes and running the app
   - The example project is already setup to use the plugin, but if you're setting up a new project -
       In the project's MainActivity.java -
         - Import the Plugin: `import com.bendyworks.capML.CapML`
