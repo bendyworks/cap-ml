@@ -4,7 +4,9 @@ import com.getcapacitor.PluginCall
 import com.getcapacitor.JSObject
 
 import android.content.Context
+import android.graphics.Rect
 import android.net.Uri
+import android.util.NoSuchPropertyException
 import com.google.firebase.ml.vision.FirebaseVision
 import com.google.firebase.ml.vision.common.FirebaseVisionImage
 import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer
@@ -19,49 +21,41 @@ class TextDetector {
     val detectedText = ArrayList<Any>()
 
     try {
-      image = FirebaseVisionImage.fromFilePath(context, fileUri);
+      image = FirebaseVisionImage.fromFilePath(context, fileUri)
+
+      // getting the height and width of the image to perform scaling
       val bitmap = image.getBitmap()
       val width = bitmap.getWidth()
       val height = bitmap.getHeight()
 
-      if (image == null) {
-        call.reject("file does not contain an image")
-      } else {
-        val textDetector: FirebaseVisionTextRecognizer = FirebaseVision.getInstance().getOnDeviceTextRecognizer();
+      val textDetector: FirebaseVisionTextRecognizer = FirebaseVision.getInstance().getOnDeviceTextRecognizer();
 
-        textDetector.processImage(image)
-          .addOnSuccessListener { detectedBlocks ->
-            println("success")
-            for (block in detectedBlocks.textBlocks) {
-              for (line in block.lines) {
-                val rect = line.boundingBox
-                if (rect !=null && rect.left != null && rect.right != null && rect.top != null && rect.bottom != null) {
-                  val textDetection = mapOf(
-                    // normalizing coordinates and switching to 1st quadrant ie origin(0,0) as bottom left
-                    // in order to match the result with that of core-ml's Vision framework.
-                    "topLeft" to listOf<Double?>((rect.left).toDouble()/width, (height - rect.top).toDouble()/height),
-                    "topRight" to listOf<Double?>((rect.right).toDouble()/width, (height - rect.top).toDouble()/height),
-                    "bottomLeft" to listOf<Double?>((rect.left).toDouble()/width, (height - rect.bottom).toDouble()/height),
-                    "bottomRight" to listOf<Double?>((rect.right).toDouble()/width, (height - rect.bottom).toDouble()/height),
-                    "text" to line.text
-                    )
-                    detectedText.add(textDetection)
-                  } else {
-                    call.reject("FirebaseVisionTextRecognizer.processImage: could not get bounding coordinates")
-                  }
-                }
+      textDetector.processImage(image)
+        .addOnSuccessListener { detectedBlocks ->
+          for (block in detectedBlocks.textBlocks) {
+            for (line in block.lines) {
+              val rect: Rect = line.boundingBox ?: throw NoSuchPropertyException("FirebaseVisionTextRecognizer.processImage: could not get bounding coordinates")
+
+              val textDetection = mapOf(
+                // normalizing coordinates and switching to 1st quadrant ie origin(0,0) as bottom left
+                // in order to match the result with that of core-ml's Vision framework.
+                "topLeft" to listOf<Double?>((rect.left).toDouble()/width, (height - rect.top).toDouble()/height),
+                "topRight" to listOf<Double?>((rect.right).toDouble()/width, (height - rect.top).toDouble()/height),
+                "bottomLeft" to listOf<Double?>((rect.left).toDouble()/width, (height - rect.bottom).toDouble()/height),
+                "bottomRight" to listOf<Double?>((rect.right).toDouble()/width, (height - rect.bottom).toDouble()/height),
+                "text" to line.text
+              )
+              detectedText.add(textDetection)
             }
-
-            val ret = JSObject()
-            ret.put("textDetections", JSONArray(detectedText))
-            call.success(ret)
           }
-          .addOnFailureListener { e ->
-            call.reject("FirebaseVisionTextRecognizer couldn't process the given image", e)
-          }
-      }
+          call.success(JSObject().put("textDetections", JSONArray(detectedText)))
+        }
+        .addOnFailureListener { e ->
+          call.reject("FirebaseVisionTextRecognizer couldn't process the given image", e)
+        }
     } catch (e: IOException) {
       e.printStackTrace();
+      call.reject(e.localizedMessage, e)
     }
   }
 }

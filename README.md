@@ -23,10 +23,10 @@ detectText(filename: string): Promise<TextDetection[]>
 TextDetection looks like  -
 ```
 interface TextDetection {
-  bottomLeft: number[]; // [x-coordinate, y-coordinate]
-  bottomRight: number[]; // [x-coordinate, y-coordinate]
-  topLeft: number[]; // [x-coordinate, y-coordinate]
-  topRight: number[]; // [x-coordinate, y-coordinate]
+  bottomLeft: [number, number]; // [x-coordinate, y-coordinate]
+  bottomRight: [number, number]; // [x-coordinate, y-coordinate]
+  topLeft: [number, number]; // [x-coordinate, y-coordinate]
+  topRight: [number, number]; // [x-coordinate, y-coordinate]
   text: string;
 }
 ```

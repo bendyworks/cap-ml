@@ -36,11 +36,10 @@ export class HomePage implements OnInit {
       this.imageFile = imageFile;
       const td = new TextDetector();
 
-      // loader.present()
+      loader.present()
       this.textDetections = await td.detectText(imageFile.path!);
-      console.log(this.textDetections);
       this.drawTextLocationsOnImage();
-      // loader.dismiss();
+      loader.dismiss();
     }).catch(error => console.error(error))
   }
 
