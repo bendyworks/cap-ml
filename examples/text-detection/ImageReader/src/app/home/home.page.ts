@@ -49,7 +49,7 @@ export class HomePage implements OnInit {
     this.textDetections.forEach((detection: TextDetection) => {
       // the received coordinates are normalized by Vision framework, proportionate to the width and height of the image itself. Hence here, x coordinate is multiplied by image width(scaleX), and y with height(scaleY) to obtain de-normalized coordinates for the chosen image scale.
       const x = detection.bottomLeft[0] * this.scaleX
-      // In addition to de-normalizing, subtracting from scaleY because TextDetector(which uses Apple's Vision Framework) assumes bottom-left as origin (0,0) vs SVG rect which assumes top-left as origin (0,0)
+      // In addition to de-normalizing, subtracting from scaleY because cap-ml assumes bottom-left as origin (0,0) vs SVG rect which assumes top-left as origin (0,0)
       const y = this.scaleY - (detection.topLeft[1] * this.scaleY)
 
       // Similar to the x and y coordinates above, the received coordinates are normalized by Vision framework, proportionate to the width and height of the image itself. Hence here, difference between corresponding x-coordinates is multiplied by image width(scaleX), and difference between corresponding y-coordinates is multiplied by image height(scaleY) to obtain de-normalized dimensions for the chosen image scale.
