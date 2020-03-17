@@ -6,6 +6,8 @@ dist
 .DS_Store
 local.properties
 
+#firebase
+google-services.json
 
 # Gradle files
 .gradle/

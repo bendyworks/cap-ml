@@ -11,7 +11,6 @@ import com.google.firebase.ml.vision.FirebaseVision
 import com.google.firebase.ml.vision.common.FirebaseVisionImage
 import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer
 import org.json.JSONArray
-import java.io.IOException
 import kotlin.collections.ArrayList
 
 
@@ -52,7 +51,7 @@ class TextDetector {
         .addOnFailureListener { e ->
           call.reject("FirebaseVisionTextRecognizer couldn't process the given image", e)
         }
-    } catch (e: IOException) {
+    } catch (e: Exception) {
       e.printStackTrace();
       call.reject(e.localizedMessage, e)
     }
