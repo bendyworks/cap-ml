@@ -28,7 +28,7 @@ public class CapML extends Plugin {
       Uri uri = Uri.fromFile(file);
 
       TextDetector td = new TextDetector();
-      td.detectText(call, this.getContext(), uri, 90);
+      td.detectText(call, this.getContext(), uri, 0);
     } else {
       call.reject("File not found");
       return;
