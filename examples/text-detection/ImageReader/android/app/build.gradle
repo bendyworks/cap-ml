@@ -41,7 +41,7 @@ dependencies {
     implementation project(':capacitor-cordova-android-plugins')
   implementation 'com.google.firebase:firebase-analytics:17.2.3'
   implementation 'com.google.firebase:firebase-ml-vision:24.0.1'
-  implementation "androidx.core:core-ktx:+"
+  implementation 'androidx.core:core-ktx:+'
   implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { Plugins, CameraSource, CameraResultType, CameraPhoto } from '@capacitor/core';
-import { TextDetector, TextDetection } from 'cap-ml';
+import { TextDetector, TextDetection, ImageOrientation } from 'cap-ml';
 const { Camera } = Plugins;
 
 @Component({
@@ -32,14 +32,18 @@ export class HomePage implements OnInit {
     Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Photos,
+      width: this.scaleX,
+      height: this.scaleY,
     }).then(async imageFile => {
       this.imageFile = imageFile;
       const td = new TextDetector();
 
-      loader.present()
-      this.textDetections = await td.detectText(imageFile.path!);
+      // loader.present()
+      // detectText(filePath, orientation?)
+      // orientation here is not the current orientation of the image, but the direction in which the image should be turned to make it upright
+      this.textDetections = await td.detectText(imageFile.path!, ImageOrientation.Left);
       this.drawTextLocationsOnImage();
-      loader.dismiss();
+      // loader.dismiss()
     }).catch(error => console.error(error))
   }
 

@@ -14,11 +14,14 @@ public class TextDetector {
     var detectedText: [[String: Any]] = []
     let call: CAPPluginCall
     let image: UIImage
+    var orientation: CGImagePropertyOrientation
     var detectedAlready = false
+    
 
     public init(call: CAPPluginCall, image: UIImage) {
         self.call = call
         self.image = image
+        self.orientation = CGImagePropertyOrientation.up
     }
 
     public func detectText() {
@@ -33,9 +36,18 @@ public class TextDetector {
             print("Looks like uiImage is nil")
             return
         }
+        
+        let inputOrientation = call.getString("orientation")
+        if inputOrientation != nil {
+            orientation = self.getOrientation(orientation: inputOrientation!)
+        } else {
+            orientation = CGImagePropertyOrientation.up
+        }
+
+        print(orientation)
     
         // VNImageRequestHandler processes image analysis requests on a single image.
-        let imageRequestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+        let imageRequestHandler = VNImageRequestHandler(cgImage: cgImage,orientation: orientation, options: [:])
 
         DispatchQueue.global(qos: .userInitiated).async {
             do {
@@ -76,4 +88,16 @@ public class TextDetector {
             ]}
         }
     }
+    
+    func getOrientation(orientation: String) -> CGImagePropertyOrientation {
+        switch orientation {
+        case "UP": return CGImagePropertyOrientation.up
+        case "DOWN": return CGImagePropertyOrientation.up
+        case "LEFT": return CGImagePropertyOrientation.left
+        case "RIGHT": return CGImagePropertyOrientation.right
+        default:
+            return CGImagePropertyOrientation.up
+        }
+    }
 }
+
