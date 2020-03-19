@@ -7,6 +7,17 @@ Machine Learning Plugin for Capacitor. Currently offered implementations include
 
     TextDetector expects the image to be sent in portrait mode only, i.e. with text facing up. It will try to process even otherwise, but note that it might result in gibberish.
 
+## Compatibility Chart
+
+| Feature  | ios | android |
+| ------------- | ------------- | ------------ |
+| ML Framework  | Vision  | Firebase MLKIt |
+| Text Detection with Still Images | Yes | Yes |
+| Detects lines of text | Yes | Yes |
+| Bounding Coordinates for Text | Yes | Yes |
+| Image Orientation | Yes (Up, Left, Right, Down) | **No** (Upright only) |
+
+
 ## Installation
 
 ```
