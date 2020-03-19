@@ -41,6 +41,8 @@
                 android:resource="@xml/file_paths"></meta-data>
         </provider>
 
+      <!-- To use the on-device API, configure the app to automatically download the ML model to the
+      device after the app is installed from the Play Store.-->
       <meta-data
         android:name="com.google.firebase.ml.vision.DEPENDENCIES"
         android:value="ocr" />
