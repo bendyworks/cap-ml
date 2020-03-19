@@ -24,7 +24,7 @@
     </ion-item>
 
     <svg #svgContainer [attr.width.px]="scaleX" [attr.height.px]="scaleY">
-      <image [attr.xlink:href]="imageFile.webPath" [attr.width]="scaleX" [attr.height]="scaleY"></image>
+      <image [attr.xlink:href]="imageFile.webPath" [attr.width]="scaleX" [attr.height]="scaleY" [attr.transform]="'rotate('+rotation+' '+scaleX/2+' '+scaleY/2+')'"></image>
     </svg>
   </div>
 
