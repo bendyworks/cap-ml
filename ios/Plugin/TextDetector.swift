@@ -38,14 +38,13 @@ public class TextDetector {
         }
         
         let inputOrientation = call.getString("orientation")
+
         if inputOrientation != nil {
             orientation = self.getOrientation(orientation: inputOrientation!)
         } else {
             orientation = CGImagePropertyOrientation.up
         }
 
-        print(orientation)
-    
         // VNImageRequestHandler processes image analysis requests on a single image.
         let imageRequestHandler = VNImageRequestHandler(cgImage: cgImage,orientation: orientation, options: [:])
 

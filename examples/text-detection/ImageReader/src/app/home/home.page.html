@@ -23,9 +23,17 @@
       <ion-text>{{text}}</ion-text>
     </ion-item>
 
-    <svg #svgContainer [attr.width.px]="scaleX" [attr.height.px]="scaleY">
-      <image [attr.xlink:href]="imageFile.webPath" [attr.width]="scaleX" [attr.height]="scaleY" [attr.transform]="'rotate('+rotation+' '+scaleX/2+' '+scaleY/2+')'"></image>
-    </svg>
+    <div *ngIf="platform.is('ios')">
+      <svg #svgContainer [attr.width.px]="scaleX" [attr.height.px]="scaleY">
+        <image [attr.xlink:href]="imageFile.webPath" [attr.width]="scaleX" [attr.height]="scaleY" [attr.transform]="'rotate('+rotation+' '+scaleX/2+' '+scaleY/2+')'"></image>
+      </svg>
+    </div>
+
+    <div *ngIf="platform.is('android')">
+      <svg #svgContainer [attr.width.px]="scaleX" [attr.height.px]="scaleY">
+        <image [attr.xlink:href]="imageFile.webPath" [attr.width]="scaleX" [attr.height]="scaleY"></image>
+      </svg>
+    </div>
   </div>
 
   <div *ngIf="textDetections">

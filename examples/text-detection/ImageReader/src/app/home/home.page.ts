@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController, Platform } from '@ionic/angular';
 import { Plugins, CameraSource, CameraResultType, CameraPhoto } from '@capacitor/core';
 import { TextDetector, TextDetection, ImageOrientation } from 'cap-ml';
 const { Camera } = Plugins;
@@ -16,12 +16,12 @@ export class HomePage implements OnInit {
   private imageFile?: CameraPhoto;
   private textDetections: TextDetection[];
   private text: string;
-  private orientation: ImageOrientation = ImageOrientation.Right;
+  private orientation: ImageOrientation = ImageOrientation.Left;
   private rotation = Rotation[this.orientation]
   private scaleX = 300;
   private scaleY = 300;
 
-  constructor(private loadingController: LoadingController) {}
+  constructor(private loadingController: LoadingController, private platform: Platform) {}
 
   async ngOnInit() {}
 

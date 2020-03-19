@@ -3,7 +3,7 @@ const { CapML } = Plugins;
 
 export class TextDetector implements TextDetectorInterface{
 
-  async detectText(filename: string, orientation: ImageOrientation = ImageOrientation.Up): Promise<TextDetection[]> {
+  async detectText(filename: string, orientation?: ImageOrientation): Promise<TextDetection[]> {
     const response = await CapML.detectText({filename, orientation})
     return response.textDetections
   }
