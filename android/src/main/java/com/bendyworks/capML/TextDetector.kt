@@ -4,7 +4,6 @@ import com.getcapacitor.PluginCall
 import com.getcapacitor.JSObject
 
 import android.content.Context
-import android.graphics.Rect
 import android.net.Uri
 import android.util.NoSuchPropertyException
 import com.google.firebase.ml.vision.FirebaseVision
@@ -33,14 +32,19 @@ class TextDetector {
         .addOnSuccessListener { detectedBlocks ->
           for (block in detectedBlocks.textBlocks) {
             for (line in block.lines) {
-              val rect: Rect = line.boundingBox ?: throw NoSuchPropertyException("FirebaseVisionTextRecognizer.processImage: could not get bounding coordinates")
+              // Gets the four corner points in clockwise direction starting with top-left.
+              val cornerPoints = line.cornerPoints ?: throw NoSuchPropertyException("FirebaseVisionTextRecognizer.processImage: could not get bounding coordinates")
+              val topLeft = cornerPoints[0]
+              val topRight = cornerPoints[1]
+              val bottomRight = cornerPoints[2]
+              val bottomLeft = cornerPoints[3]
 
               val textDetection = mapOf(
                 // normalizing coordinates
-                "topLeft" to listOf<Double?>((rect.left).toDouble()/width, (height - rect.top).toDouble()/height),
-                "topRight" to listOf<Double?>((rect.right).toDouble()/width, (height - rect.top).toDouble()/height),
-                "bottomLeft" to listOf<Double?>((rect.left).toDouble()/width, (height - rect.bottom).toDouble()/height),
-                "bottomRight" to listOf<Double?>((rect.right).toDouble()/width, (height - rect.bottom).toDouble()/height),
+                "topLeft" to listOf<Double?>((topLeft.x).toDouble()/width, (height - topLeft.y).toDouble()/height),
+                "topRight" to listOf<Double?>((topRight.x).toDouble()/width, (height - topRight.y).toDouble()/height),
+                "bottomLeft" to listOf<Double?>((bottomLeft.x).toDouble()/width, (height - bottomLeft.y).toDouble()/height),
+                "bottomRight" to listOf<Double?>((bottomRight.x).toDouble()/width, (height - bottomRight.y).toDouble()/height),
                 "text" to line.text
               )
               detectedText.add(textDetection)
