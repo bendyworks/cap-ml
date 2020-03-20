@@ -23,7 +23,8 @@ export class HomePage implements OnInit {
 
   constructor(private loadingController: LoadingController, private platform: Platform) {}
 
-  async ngOnInit() {}
+  ngOnInit() {
+  }
 
   async detectTextInImage() {
     const loader = await this.loadingController.create({
@@ -40,12 +41,12 @@ export class HomePage implements OnInit {
       this.imageFile = imageFile;
       const td = new TextDetector();
 
-      // loader.present()
+      loader.present()
       // detectText(filePath, orientation?)
       // orientation here is not the current orientation of the image, but the direction in which the image should be turned to make it upright
       this.textDetections = await td.detectText(imageFile.path!);
       this.drawTextLocationsOnImage();
-      // loader.dismiss()
+      loader.dismiss()
     }).catch(error => console.error(error))
   }
 
@@ -53,24 +54,22 @@ export class HomePage implements OnInit {
     const svgContainer = this.svgContainer.nativeElement;
     this.clearPrevDetections(svgContainer);
     this.textDetections.forEach((detection: TextDetection) => {
-      // the received coordinates are normalized by Vision framework, proportionate to the width and height of the image itself. Hence here, x coordinate is multiplied by image width(scaleX), and y with height(scaleY) to obtain de-normalized coordinates for the chosen image scale.
-      const x = detection.bottomLeft[0] * this.scaleX
-      // In addition to de-normalizing, subtracting from scaleY because cap-ml assumes bottom-left as origin (0,0) vs SVG rect which assumes top-left as origin (0,0)
-      const y = this.scaleY - (detection.topLeft[1] * this.scaleY)
+      let points = '';
+      const coordinates = [detection.bottomLeft, detection.bottomRight, detection.topRight, detection.topLeft];
 
-      // Similar to the x and y coordinates above, the received coordinates are normalized by Vision framework, proportionate to the width and height of the image itself. Hence here, difference between corresponding x-coordinates is multiplied by image width(scaleX), and difference between corresponding y-coordinates is multiplied by image height(scaleY) to obtain de-normalized dimensions for the chosen image scale.
-      let width = (detection.bottomRight[0] - detection.bottomLeft[0]) * this.scaleX
-      let height = (detection.topLeft[1] - detection.bottomLeft[1]) * this.scaleY
+      // the received coordinates are normalized, proportionate to the width and height of the image itself. Hence here, x coordinate is multiplied by image width(scaleX), and y with height(scaleY) to obtain de-normalized coordinates for the chosen image scale. In addition to de-normalizing, subtracting from scaleY because cap-ml assumes bottom-left as origin (0,0) vs SVG rect which assumes top-left as origin (0,0)
+      coordinates.forEach(coordinate => {
+        points = points + coordinate[0]*this.scaleX + ' ' + (this.scaleY - (coordinate[1]*this.scaleY)) + ',';
+      })
+      points = points.slice(0, -1);  // removing the last comma
 
-      let rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-      rect.setAttribute("fill", "#000");
-      rect.setAttribute('x', x.toString());
-      rect.setAttribute('y', y.toString());
-      rect.setAttribute('width', width.toString());
-      rect.setAttribute('height', height.toString());
-      rect.setAttribute('opacity', '0.4')
-      rect.onclick = () => this.text = detection.text;
-      svgContainer.appendChild(rect);
+      let polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+      polygon.setAttribute("fill", "#000");
+      polygon.setAttribute("stroke", "#000")
+      polygon.setAttribute('opacity', '0.4')
+      polygon.setAttribute('points', points);
+      polygon.onclick = () => this.text = detection.text;
+      svgContainer.appendChild(polygon);
     })
   }
 
