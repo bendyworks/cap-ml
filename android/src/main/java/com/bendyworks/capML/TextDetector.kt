@@ -1,30 +1,24 @@
 package com.bendyworks.capML
 
-import com.getcapacitor.PluginCall
-import com.getcapacitor.JSObject
-
-import android.content.Context
-import android.net.Uri
+import android.graphics.Bitmap
 import android.util.NoSuchPropertyException
+import com.getcapacitor.JSObject
+import com.getcapacitor.PluginCall
 import com.google.firebase.ml.vision.FirebaseVision
 import com.google.firebase.ml.vision.common.FirebaseVisionImage
 import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer
 import org.json.JSONArray
-import kotlin.collections.ArrayList
 
 
 class TextDetector {
-  fun detectText(call: PluginCall, context: Context, fileUri: Uri, degrees: Int) {
+  fun detectText(call: PluginCall, bitmap: Bitmap) {
     val image: FirebaseVisionImage
     val detectedText = ArrayList<Any>()
 
     try {
-      image = FirebaseVisionImage.fromFilePath(context, fileUri)
-
-      // getting the height and width of the image to perform scaling
-      val bitmap = image.getBitmap()
-      val width = bitmap.getWidth()
-      val height = bitmap.getHeight()
+      image = FirebaseVisionImage.fromBitmap(bitmap)
+      val width = bitmap.width
+      val height = bitmap.height
 
       val textDetector: FirebaseVisionTextRecognizer = FirebaseVision.getInstance().getOnDeviceTextRecognizer();
 

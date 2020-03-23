@@ -16,7 +16,7 @@ public class TextDetector {
     let image: UIImage
     var orientation: CGImagePropertyOrientation
     var detectedAlready = false
-    
+
 
     public init(call: CAPPluginCall, image: UIImage) {
         self.call = call
@@ -31,12 +31,12 @@ public class TextDetector {
             return
          }
         self.detectedAlready = true
-        
+
         guard let cgImage = image.cgImage else {
             print("Looks like uiImage is nil")
             return
         }
-        
+
         let inputOrientation = call.getString("orientation")
 
         if inputOrientation != nil {
@@ -77,7 +77,7 @@ public class TextDetector {
                 self.call.reject("error")
                 return
             }
-            
+
             self.detectedText = results.map {[
                 "topLeft": [Double($0.topLeft.x), Double($0.topLeft.y)] as [Double],
                 "topRight": [Double($0.topRight.x), Double($0.topRight.y)] as [Double],
@@ -87,11 +87,11 @@ public class TextDetector {
             ]}
         }
     }
-    
+
     func getOrientation(orientation: String) -> CGImagePropertyOrientation {
         switch orientation {
         case "UP": return CGImagePropertyOrientation.up
-        case "DOWN": return CGImagePropertyOrientation.up
+        case "DOWN": return CGImagePropertyOrientation.down
         case "LEFT": return CGImagePropertyOrientation.left
         case "RIGHT": return CGImagePropertyOrientation.right
         default:
@@ -99,4 +99,3 @@ public class TextDetector {
         }
     }
 }
-

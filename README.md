@@ -11,11 +11,13 @@ Machine Learning Plugin for Capacitor. Currently offered implementations include
 
 | Feature  | ios | android |
 | ------------- | ------------- | ------------ |
-| ML Framework  | Vision  | Firebase MLKIt |
+| ML Framework  | CoreML Vision  | MLKIt Vision |
 | Text Detection with Still Images | Yes | Yes |
 | Detects lines of text | Yes | Yes |
 | Bounding Coordinates for Text | Yes | Yes |
-| Image Orientation | Yes (Up, Left, Right, Down) | **No** (Upright only) |
+| Image Orientation | Yes (Up, Left, Right, Down) | Yes (Up, Left, Right, Down) |
+| Skewed Text| Yes | No |
+| Angled (Rotated <~ 45deg) Text | Yes | Yes |
 
 
 ## Installation
@@ -28,7 +30,6 @@ npm install cap-ml
 
 TextDetector exposes only one method `detectText` that returns a Promise with an array of text detections -
 ```
-// ios plugin handles orientations(top, right, bottom, left) but android plugin expects the image in upright position only.
 // Orientation here is not the current orientation of the image, but the direction in which the image should be turned to make it upright
 detectText(filename: string, orientation?: ImageOrientation): Promise<TextDetection[]>
 

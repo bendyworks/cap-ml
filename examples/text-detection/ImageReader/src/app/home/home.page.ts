@@ -16,8 +16,8 @@ export class HomePage implements OnInit {
   private imageFile?: CameraPhoto;
   private textDetections: TextDetection[];
   private text: string;
-  private orientation: ImageOrientation = ImageOrientation.Up;
-  private rotation = Rotation[this.orientation]
+  private orientation: ImageOrientation;
+  private rotation = 0;
   private scaleX = 300;
   private scaleY = 300;
 
@@ -44,7 +44,9 @@ export class HomePage implements OnInit {
       loader.present()
       // detectText(filePath, orientation?)
       // orientation here is not the current orientation of the image, but the direction in which the image should be turned to make it upright
-      this.textDetections = await td.detectText(imageFile.path!);
+      this.orientation = ImageOrientation.Right;
+      this.rotation = Rotation[this.orientation];
+      this.textDetections = await td.detectText(imageFile.path!, this.orientation);
       this.drawTextLocationsOnImage();
       loader.dismiss()
     }).catch(error => console.error(error))
@@ -83,6 +85,6 @@ export class HomePage implements OnInit {
 enum Rotation {
   UP = 0,
   DOWN = 180,
-  LEFT = -90,
+  LEFT = 270,
   RIGHT = 90,
 }
