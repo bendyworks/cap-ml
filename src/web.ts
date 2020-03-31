@@ -1,7 +1,7 @@
 import { WebPlugin } from '@capacitor/core';
-import { CapMLInterface, TextDetection } from './definitions';
+import { TextDetection, ImageOrientation } from './text-detector/index';
 
-export class CapMLWeb extends WebPlugin implements CapMLInterface {
+export class CapMLWeb extends WebPlugin {
   constructor() {
     super({
       name: 'CapML',
@@ -9,7 +9,7 @@ export class CapMLWeb extends WebPlugin implements CapMLInterface {
     });
   }
 
-  async detectText(filename: string): Promise<TextDetection[]> {
+  async detectText(filename: string, orientation?: ImageOrientation): Promise<TextDetection[]> {
     return Promise.reject("Web Plugin Not implemented")
   }
 }

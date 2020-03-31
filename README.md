@@ -7,6 +7,22 @@ Machine Learning Plugin for Capacitor. Currently offered implementations include
 
     TextDetector expects the image to be sent in portrait mode only, i.e. with text facing up. It will try to process even otherwise, but note that it might result in gibberish.
 
+## Compatibility Chart
+
+| Feature                          | ios                         | android                     |
+| -------------------------------- | --------------------------- | --------------------------- |
+| ML Framework                     | CoreML Vision               | Firebase MLKit              |
+| Text Detection with Still Images | Yes                         | Yes                         |
+| Detects lines of text            | Yes                         | Yes                         |
+| Bounding Coordinates for Text    | Yes                         | Yes                         |
+| Image Orientation                | Yes (Up, Left, Right, Down) | Yes (Up, Left, Right, Down) |
+| Skewed Text                      | Yes                         | Unreliable                  |
+| Rotated Text (<~ 45deg)          | Yes                         | Yes (but with noise)        |
+| On-Device                        | Yes                         | Yes                         |
+| SDK/ios Version                  | ios 13.0 or newer           | Targets API level >= 16<br>Uses Gradle >= 4.1<br>com.android.tools.build:gradle >= v3.2.1<br>compileSdkVersion >= 28 |
+| | | |
+
+
 ## Installation
 
 ```
@@ -17,7 +33,8 @@ npm install cap-ml
 
 TextDetector exposes only one method `detectText` that returns a Promise with an array of text detections -
 ```
-detectText(filename: string): Promise<TextDetection[]>
+// Orientation here is not the current orientation of the image, but the direction in which the image should be turned to make it upright
+detectText(filename: string, orientation?: ImageOrientation): Promise<TextDetection[]>
 
 ```
 TextDetection looks like  -
@@ -28,6 +45,16 @@ interface TextDetection {
   topLeft: [number, number]; // [x-coordinate, y-coordinate]
   topRight: [number, number]; // [x-coordinate, y-coordinate]
   text: string;
+}
+```
+
+ImageOrientation is an enum  -
+```
+enum ImageOrientation {
+  Up = "UP",
+  Down = "DOWN",
+  Left = "LEFT",
+  Right = "RIGHT",
 }
 ```
 bottomLeft[x,y], bottomRight[x,y], topLeft[x,y], topRight[x,y] provide the coordinates for the bounding quadrangle for the detected 'text'. Often, this would be a rectangle, but the text might be skewed.
@@ -53,6 +80,9 @@ and used like:
   # pass in the picture to 'CapML' plugin
   const td = new TextDetector();
   const textDetections = await td.detectText(imageFile.path!)
+
+  # or with orientation -
+  # const textDetections = await td.detectText(imageFile.path!, ImageOrientation.Up)
 
   # textDetections is an array of detected texts and corresponding bounding box coordinates
   # which can be accessed like -
@@ -85,10 +115,22 @@ If you're using it in an Android app (generated through Ionic), there is an addi
   - Open the app in Android Studio by running `npx cap open android` from the sample app's root directory. ie here, at examples/text-detection/ImageReader
   - Open app/manifests/AndroidManifest.xml
   - Add the corresponding permissions to the app -
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
+    - android.permission.INTERNET
+    - android.permission.READ_EXTERNAL_STORAGE
+    - android.permission.WRITE_EXTERNAL_STORAGE
+    - android.permission.CAMERA
+
+  -  Note: Sample App is set up to download Firebase's OCR model for Text Detection upon installing the app. If the app errors out with something like -  `Considering local module com.google.android.gms.vision.ocr:0 and remote module com.google.android.gms.vision.ocr:0.
+  E/Vision: Error loading module com.google.android.gms.vision.ocr optional module true: com.google.android.gms.dynamite.DynamiteModule$LoadingException: No acceptable module found. Local version is 0 and remote version is 0.`.
+
+      This is a known bug with Google Play Services.
+
+      Follow these steps -
+      1. Uninstall app from the device/emulator.
+      2. Update 'Google Play Services' - make sure you have the latest version.
+      3. Clear cache and store for 'Google Play Services'
+      4. Restart the device/emulator
+      4. Install and run the app.
 
 ## Development
 

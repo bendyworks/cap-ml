@@ -19,7 +19,6 @@ public class CapML: CAPPlugin {
             call.reject("file does not contain an image")
             return
         }
-
         TextDetector(call: call, image: image).detectText()
     }
 }
