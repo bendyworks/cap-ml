@@ -9,15 +9,18 @@ Machine Learning Plugin for Capacitor. Currently offered implementations include
 
 ## Compatibility Chart
 
-| Feature  | ios | android |
-| ------------- | ------------- | ------------ |
-| ML Framework  | CoreML Vision  | MLKIt Vision |
-| Text Detection with Still Images | Yes | Yes |
-| Detects lines of text | Yes | Yes |
-| Bounding Coordinates for Text | Yes | Yes |
-| Image Orientation | Yes (Up, Left, Right, Down) | Yes (Up, Left, Right, Down) |
-| Skewed Text| Yes | No |
-| Angled (Rotated <~ 45deg) Text | Yes | Yes |
+| Feature                          | ios                         | android                     |
+| -------------------------------- | --------------------------- | --------------------------- |
+| ML Framework                     | CoreML Vision               | Firebase MLKit              |
+| Text Detection with Still Images | Yes                         | Yes                         |
+| Detects lines of text            | Yes                         | Yes                         |
+| Bounding Coordinates for Text    | Yes                         | Yes                         |
+| Image Orientation                | Yes (Up, Left, Right, Down) | Yes (Up, Left, Right, Down) |
+| Skewed Text                      | Yes                         | Unreliable                  |
+| Rotated Text (<~ 45deg)          | Yes                         | Yes (but with noise)        |
+| On-Device                        | Yes                         | Yes                         |
+| SDK/ios Version                  | ios 13.0 or newer           | Targets API level >= 16<br>Uses Gradle >= 4.1<br>com.android.tools.build:gradle >= v3.2.1<br>compileSdkVersion >= 28 |
+| | | |
 
 
 ## Installation
