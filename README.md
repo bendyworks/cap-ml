@@ -196,6 +196,8 @@ After checking out the repo,
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/bendyworks/cap-ml.
 
+If you're curious about the implementation, here's an extensive blog post series - https://bendyworks.com/blog/capacitor-plugin-for-text-detection-part1
+
 ## License
 Hippocratic License Version 2.0.
 
