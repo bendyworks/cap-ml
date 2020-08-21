@@ -44,7 +44,7 @@ export class HomePage implements OnInit {
       loader.present()
       // detectText(filePath, orientation?)
       // orientation here is not the current orientation of the image, but the direction in which the image should be turned to make it upright
-      this.orientation = ImageOrientation.Right;
+      // this.orientation = ImageOrientation.Up;
       this.rotation = Rotation[this.orientation];
       this.textDetections = await td.detectText(imageFile.path!, this.orientation);
       this.drawTextLocationsOnImage();

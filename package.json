@@ -12,14 +12,13 @@
   },
   "author": "Vennela Kodali",
   "license": "Hippocratic License Version 2.0",
-  "dependencies": {
-    "@capacitor/core": "latest"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "rimraf": "^3.0.0",
-    "typescript": "^3.2.4",
+    "@capacitor/android": "latest",
+    "@capacitor/core": "^2.4.0",
     "@capacitor/ios": "latest",
-    "@capacitor/android": "latest"
+    "rimraf": "^3.0.0",
+    "typescript": "4.0.0"
   },
   "files": [
     "dist/",
