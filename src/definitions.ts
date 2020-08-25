@@ -2,7 +2,9 @@ import '@capacitor/core';
 
 declare module "@capacitor/core" {
   interface PluginRegistry {
-    CapML: {};
+    CapML: {
+      detectText: Function;
+    };
   }
 }
 

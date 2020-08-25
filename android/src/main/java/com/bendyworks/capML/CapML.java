@@ -25,6 +25,10 @@ public class CapML extends Plugin {
       return;
     }
     String orientation = call.getString("orientation");
+    if (orientation == null) {
+      orientation = "UP";
+    }
+
     int rotation = this.orientationToRotation(orientation);
 
     Bitmap bitmap  = MediaStore.Images.Media.getBitmap(this.getContext().getContentResolver(), Uri.parse(filename));
